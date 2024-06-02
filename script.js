@@ -21,6 +21,13 @@ function displayNews(articles) {
     const articleElement = document.createElement("div");
     articleElement.classList.add("article");
 
+    if (article.urlToImage) {
+      const image = document.createElement("img");
+      image.src = article.urlToImage;
+      image.alt = article.title;
+      articleElement.appendChild(image);
+    }
+
     const title = document.createElement("h2");
     title.textContent = article.title;
     articleElement.appendChild(title);

@@ -5,21 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News API Fetch Example</title>
     <style>
-        body {
+               body {
             font-family: Arial, sans-serif;
             margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #news-articles {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
         }
         .article {
-            border-bottom: 1px solid #ccc;
-            margin-bottom: 10px;
-            padding-bottom: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 20px;
+            width: 300px;
+            box-sizing: border-box;
+            transition: transform 0.2s;
+        }
+        .article:hover {
+            transform: scale(1.05);
+        }
+        .article img {
+           width: 250px;
+           height: auto;
+           margin-bottom: 10px;
+           border-radius: 5px;
+           box-shadow: 0 1px 5px rgba(0, 0, 0, 0.8);
         }
         .article h2 {
-            margin: 0;
+            font-size: 1.2em;
+            margin: 0 0 10px;
         }
         .article p {
-            margin: 5px 0;
+            font-size: 0.9em;
+            margin: 10px 0;
         }
+        .article a {
+            display: inline-block;
+            margin-top: 10px;
+            color: #1e90ff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .article a:hover {
+            text-decoration: underline;
+        }
+
     </style>
 </head>
 <body>
