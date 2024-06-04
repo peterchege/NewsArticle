@@ -13,6 +13,8 @@ async function fetchNews() {
   }
 }
 
+
+
 function displayNews(articles) {
   const newsContainer = document.getElementById("news-articles");
   newsContainer.innerHTML = "";
@@ -45,5 +47,28 @@ function displayNews(articles) {
     newsContainer.appendChild(articleElement);
   });
 }
+const categories = {
+  Politics: ["government", "election", "policy"],
+  Sports: ["football", "basketball", "baseball"],
+  Business: ["stock", "market", "economy"],
+  Entertainment: ["movie", "music", "celebrity"]
+};
+function categorizeNews(article) {
+  const tokens = article.toLowerCase().split(" ");
+  for (const category in categories) {
+    for (const keyword of categories[category]) {
+      if (tokens.includes(keyword)) {
+        return category;
+      }
+    }
+  }
+  return "Unknown";
+}
+// Example usage:
+const article = "The government has announced a new policy to stimulate the economy.";
+const category = categorizeNews(article);
+console.log(`Category: ${category}`); // Output: Category: Politics
 
 fetchNews();
+
+
